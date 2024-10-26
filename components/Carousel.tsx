@@ -1,36 +1,38 @@
-import { View, Text, FlatList, Animated } from 'react-native'
-import React , {useState, useRef} from 'react'
+import { View, FlatList, Dimensions, Animated } from 'react-native'
+import React from 'react'
 import carouselImages from '@/assets/mocked-data/carouselImages'
-import CarouselItem from './CarouselItem'
+import CarouselCard from './CarouselCard'
+import Paginator from './Paginator'
+
+const {width} = Dimensions.get('window')
+const scrollX = new Animated.Value(0);
 
 const Carousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const scrollX = useRef(new Animated.Value(0)).current;
-    const imagesRef = useRef(null);
-
-    const viewableItemsChanged = useRef(({ viewableItems }) => {
-        setCurrentIndex(viewableItems[0].index);
-    }).current;
-
-    const viewConfig = useRef({viewAreaCoveragePercentThreshold: 50}).current;
-
+  
   return (
-    <View className="h-64">
-      <FlatList data={carouselImages} renderItem={({ item }) => <CarouselItem item={item} /> } 
+    <View>
+      <FlatList
       horizontal
-      showsHorizontalScrollIndicator
       pagingEnabled
-      bounces={false}
-      keyExtractor={(item) => item.id}
+      showsHorizontalScrollIndicator={false}
+      snapToOffsets={[...Array(carouselImages.length)].map((_, i) => i * (width * 0.8-40) + (i-1)*40)}
+      snapToAlignment={'center'}
+      scrollEventThrottle={16}
+      initialScrollIndex={2}
+      getItemLayout={(data, index) => ({
+        length: width * 0.8 - 40,
+        offset: (width * 0.8 - 40) * index,
+        index,
+      })}
       onScroll={Animated.event([{ nativeEvent: { contentOffset: {x : scrollX} }}], {
         useNativeDriver: false
       })}
-      scrollEventThrottle={32}
-      onViewableItemsChanged={viewableItemsChanged}
-      viewabilityConfig={viewConfig}
-      ref={imagesRef}
-      
-      />
+      decelerationRate={'fast'}
+      style={{marginTop:10}}
+      data={carouselImages} renderItem={({ item }) => <CarouselCard item={item}/> }
+      keyExtractor={(item) => item.id}
+    />
+    <Paginator data={carouselImages} scrollX={scrollX} />
     </View>
   )
 }
