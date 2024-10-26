@@ -9,12 +9,11 @@ const { width } = Dimensions.get('window');
 const Trendings = () => {
     const translateX = useRef(new Animated.Value(0)).current;
     const categorias = [
-        { id: 1, nome: "#FAC", cor: "text-purple" },
-        { id: 2, nome: "#eleicoes", cor: "text-red" },
-        { id: 3, nome: "#debate", cor: "text-orange" },
-        { id: 4, nome: "#RU", cor: "text-green" },
-        { id: 5, nome: "#jogos", cor: "text-blue" },
-        { id: 6, nome: "#110", cor: "text-brown" },
+        { id: 1, nome: "#Lorem", cor: "text-purple" },
+        { id: 2, nome: "#Lorem", cor: "text-red" },
+        { id: 3, nome: "#Lorem", cor: "text-orange" },
+        { id: 4, nome: "#Lorem", cor: "text-green" },
+        { id: 5, nome: "#Lorem", cor: "text-blue" },
     ];
 
 
@@ -62,7 +61,7 @@ const Trendings = () => {
                     className="w-[23] h-[25]"
                     resizeMode="contain"           
                 />
-                <Text className="ml-1 mr-2 text-lg font-psemibold text-black">Em alta</Text>
+                <Text className="ml-1 mr-2 text-lg font-pregular text-black">Em alta</Text>
                 <View className="overflow-hidden">
                     <Animated.View style={{ transform: [{ translateX }] }} className="flex flex-row text-lg">
                         <FlatList
