@@ -8,7 +8,7 @@ const Header = () => {
         <TouchableOpacity>
             <Image 
                 source={icons.menuIcon}
-                className="w-[23] h-[25]"
+                className="w-[28] h-[30]"
                 resizeMode="contain"
             />
         </TouchableOpacity>
@@ -20,7 +20,7 @@ const Header = () => {
         <TouchableOpacity>
             <Image 
                 source={icons.searchIcon}
-                className="w-[23] h-[25]"
+                className="w-[28] h-[30]"
                 resizeMode="contain"
             />
         </TouchableOpacity>
