@@ -1,31 +1,46 @@
 import React from 'react'
-import { TouchableOpacity, Image, View } from 'react-native'
+import { TouchableOpacity, Image, View, StyleSheet } from 'react-native'
 import { icons, images } from '../constants'
+import standard from '../theme'
 
 const Header = () => {
   return (
-    <View className="bg-campusRed p-4 w-full h-58 flex flex-row items-center justify-between">
-        <TouchableOpacity>
-            <Image 
-                source={icons.menuIcon}
-                className="w-[28] h-[30]"
-                resizeMode="contain"
-            />
-        </TouchableOpacity>
+    <View style={styles.headerStyle}>
         <Image 
             source={images.logo}
-            className="w-[145px] h-[31px]"
+            style={styles.logo}
             resizeMode="contain"
         />
         <TouchableOpacity>
             <Image 
-                source={icons.searchIcon}
-                className="w-[28] h-[30]"
+                source={icons.menuIcon}
+                style={styles.menuIcon}
                 resizeMode="contain"
             />
         </TouchableOpacity>
+        
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+    headerStyle: {
+        backgroundColor: standard.colors.campusRed,
+        padding: 16,
+        width: '100%',
+        height: 58,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    logo: {
+        width: 145,
+        height: 31,
+      },
+    menuIcon: {
+        width: 28,
+        height: 30,
+    },
+})
 
 export default Header
