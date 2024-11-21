@@ -1,3 +1,5 @@
+#Files and folders to untrack
+.env
 node_modules/
 .expo/
 dist/
