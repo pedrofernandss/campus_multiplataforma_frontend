@@ -1,4 +1,4 @@
-export const standard = {
+const standard = {
   colors: {
     primaryWhite: '#F5F5F5',
     campusRed: '#6C0318',
@@ -15,3 +15,4 @@ export const standard = {
   },
 };
 
+export default standard
