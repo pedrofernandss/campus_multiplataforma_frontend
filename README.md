@@ -10,7 +10,7 @@ O **Campus Multiplataforma** é um aplicativo desenvolvido como parte da discipl
 
 A plataforma faz uso de **inteligência artificial** para otimizar o processo jornalístico, auxiliando na curadoria de conteúdo, sugestão de pautas e distribuição eficiente das notícias, integrando diferentes mídias de forma eficiente e acessível.
 
-Este projeto está sendo desenvolvido com **React Native** no front-end, utilizando o ambiente **Expo**, e **Nest.js** no back-end. Ambas as aplicações utilizam **TypeScript** para garantir um código robusto e escalável. A infraestrutura é totalmente dockerizada para facilitar o desenvolvimento, a implantação e o escalonamento. Além disso, **Python** será utilizado para integrar as funcionalidades de inteligência artificial.
+Este projeto está sendo desenvolvido com **React Native** no front-end, utilizando o ambiente **Expo**, e **Google Firebase** no back-end. Ambas as aplicações utilizam **TypeScript** para garantir um código robusto e escalável. A infraestrutura é totalmente dockerizada para facilitar o desenvolvimento, a implantação e o escalonamento.
 
 ## Integrantes
 
@@ -28,16 +28,10 @@ Este projeto está sendo desenvolvido com **React Native** no front-end, utiliza
 - **Docker**
 
 ### Back-end
-- **Nest.js**
+- **Google Firebase**
 - **TypeScript**
 - **Docker**
-- **Python** (para integração de IA)
 
-## Estrutura do Projeto
-
-## Contribuições
-
-Contribuições são bem-vindas! Para reportar bugs ou sugerir melhorias, por favor, abra uma **issue** ou envie um **pull request**.
 
 ## Licença
 
