@@ -1,7 +1,9 @@
 import React from 'react'
-import { TouchableOpacity, Image, View, StyleSheet } from 'react-native'
+import { TouchableOpacity, Image, View, StyleSheet, Dimensions } from 'react-native'
 import { icons, images } from '../constants'
 import standard from '../theme'
+
+const { width } = Dimensions.get('window');
 
 const Header = () => {
   return (
@@ -25,10 +27,10 @@ const Header = () => {
 
 const styles = StyleSheet.create({
     headerStyle: {
+        paddingHorizontal: width * 0.04,
+        width: "100%",
+        height: width * 0.14,
         backgroundColor: standard.colors.campusRed,
-        padding: 16,
-        width: '100%',
-        height: 58,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
