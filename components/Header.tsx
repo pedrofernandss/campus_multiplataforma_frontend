@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     headerStyle: {
         paddingHorizontal: width * 0.04,
         width: "100%",
-        height: width * 0.14,
+        height: width * 0.15,
         backgroundColor: standard.colors.campusRed,
         flexDirection: 'row',
         alignItems: 'center',
