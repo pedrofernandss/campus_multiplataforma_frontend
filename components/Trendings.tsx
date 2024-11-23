@@ -1,9 +1,8 @@
-import { Image, View, Text, Animated, FlatList, Dimensions } from 'react-native';
+import { Image, View, Text, Animated, FlatList, Dimensions, StyleSheet } from 'react-native';
 import React, { useEffect, useRef } from 'react';
 import { icons } from '@/constants';
-import { tw } from 'nativewind'; // Importando o NativeWind
+import standard from '@/theme';
 
-// Largura da tela para calcular o deslocamento
 const { width } = Dimensions.get('window');
 
 const Trendings = () => {
@@ -45,7 +44,7 @@ const Trendings = () => {
     const renderItem = ({ item }) => (
         <Text
             key={item.id}
-            className={`px-1.5 text-lg font-pregular ${item.cor}`} // Usando a cor dinâmica no className
+            style={styles.trendingItemText}
         >
             {item.nome}
         </Text>
@@ -54,16 +53,16 @@ const Trendings = () => {
 
 
     return (
-        <View className="p-1 rounded-lg">
-            <View className="flex flex-row items-center">
+        <View style={styles.container}>
+            <View style={styles.innerContainer}>
                 <Image 
                     source={icons.trendingIcon}
-                    className="w-[23] h-[25]"
+                    style={styles.trendingIcon}
                     resizeMode="contain"           
                 />
-                <Text className="ml-1 mr-2 text-lg font-pregular text-black">Em alta</Text>
-                <View className="overflow-hidden">
-                    <Animated.View style={{ transform: [{ translateX }] }} className="flex flex-row text-lg">
+                <Text style={styles.labelText}>Em alta</Text>
+                <View style={styles.overflowTransformation}>
+                    <Animated.View style={[{ transform: [{ translateX }] }, styles.animatedTrendingText]}>
                         <FlatList
                             data={categorias}
                             horizontal
@@ -78,5 +77,46 @@ const Trendings = () => {
         </View>
     );
 };
+
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 4,
+        borderRadius: 12,
+    },
+    innerContainer: {
+        flexDirection: 'row', 
+        alignItems: 'center', 
+    },
+    trendingIcon:{
+        width: width * 0.09,
+        height: width * 0.09,
+    },
+    labelText: {
+        marginLeft: 4, 
+        marginRight: 8, 
+        fontSize: width * 0.05, 
+        fontFamily: standard.fonts.regular, 
+        color: 'black',
+    },
+    overflowTransformation:{
+        overflow: 'hidden'
+    },
+    animatedTrendingText:{
+        flexDirection: 'row'
+    },
+    trendingItemText: {
+        paddingHorizontal: width * 0.009, 
+        fontSize: width * 0.05,
+        fontFamily: standard.fonts.regular,
+        color: 'red',
+    }
+
+
+
+
+
+
+})
 
 export default Trendings;
