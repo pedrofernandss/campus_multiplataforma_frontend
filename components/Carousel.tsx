@@ -18,7 +18,7 @@ const Carousel = () => {
       snapToOffsets={[...Array(carouselImages.length)].map((_, i) => i * (width * 0.8-40) + (i-1)*40)}
       snapToAlignment={'center'}
       scrollEventThrottle={16}
-      initialScrollIndex={2}
+      initialScrollIndex={1}
       getItemLayout={(data, index) => ({
         length: width * 0.8 - 40,
         offset: (width * 0.8 - 40) * index,
