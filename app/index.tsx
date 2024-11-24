@@ -1,15 +1,26 @@
 import Trendings from "@/components/Trendings";
 import Header from "../components/Header";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { StyleSheet, SafeAreaView } from 'react-native'
+import standard from "@/theme";
+import Carousel from "@/components/Carousel";
 
 export default function App() {
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView style={styles.safeAreaContainer}>
+      <StatusBar backgroundColor={standard.colors.primaryWhite} style='dark' />
       <Header />
       <Trendings />
+      <Carousel />
 
-      <StatusBar backgroundColor='bg-campusRed' style='light' />
+      
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  safeAreaContainer: {
+    backgroundColor: standard.colors.primaryWhite,
+    flex: 1,
+  }
+})
