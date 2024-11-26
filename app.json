@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Campus",
+    "slug": "campus_multiplataforma",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icons/campus-icon.png",
+    "scheme": "campus",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/campusplash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#6C0318"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/campus-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/icons/campus-icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
