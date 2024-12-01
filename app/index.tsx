@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView } from 'react-native'
 import standard from "@/theme";
 import Carousel from "@/components/Carousel";
+import NewsList from "@/components/NewsList";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Header />
       <Trendings />
       <Carousel />
+      <NewsList />
 
       
     </SafeAreaView>
