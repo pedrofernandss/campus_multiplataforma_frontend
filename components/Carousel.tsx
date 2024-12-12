@@ -27,7 +27,6 @@ const Carousel = () => {
             videoDuration: 'medium'
           }
         });
-        console.log('Tipo da variável videos:', typeof videos);
         setVideos(response.data.items);
       } catch (error) {
         const err = error as Error;
