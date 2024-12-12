@@ -19,10 +19,10 @@ const Carousel = () => {
         const response = await axios.get(url, {
           params: {
             part: 'snippet',
-            channelId: process.env.CHANNEL_ID,
+            channelId: process.env.EXPO_PUBLIC_CHANNEL_ID,
             order: 'date',
             maxResults: 4,
-            key: process.env.YOUTUBE_API_KEY,
+            key: process.env.EXPO_PUBLIC_YOUTUBE_API_KEY,
             type: 'video',          
             videoDuration: 'medium'
           }
