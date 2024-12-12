@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { YOUTUBE_API_KEY } from '@env';
 import React, { useEffect, useState } from 'react'
 import { View, FlatList, Dimensions, Animated } from 'react-native'
 import CarouselCard from './CarouselCard'
@@ -20,10 +19,10 @@ const Carousel = () => {
         const response = await axios.get(url, {
           params: {
             part: 'snippet',
-            channelId: 'UChegNOjzApuGBTQyPo3I27Q',
+            channelId: process.env.CHANNEL_ID,
             order: 'date',
             maxResults: 4,
-            key: YOUTUBE_API_KEY,
+            key: process.env.YOUTUBE_API_KEY,
             type: 'video',          
             videoDuration: 'medium'
           }
